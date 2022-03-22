@@ -2,7 +2,7 @@
 
 View the full [Develop a Vue App that provides basic agent monitoring functionality](https://developer.mypurecloud.com/blueprints/agent-monitoring-app) article on the Genesys Cloud Developer Center.
 
-![GCSDK_Angular](blueprint/images/cover.png "Develop an Angular app that uses the Genesys Cloud Platform SDK")
+![GCSDK_Angular](blueprint/images/overview.png "Develop an Angular app that uses the Genesys Cloud Platform SDK")
 
 This Genesys Cloud Developer Blueprint demonstrates how to to include the Genesys Cloud Javascript Platform SDK in a Vue project. The blueprint includes a sample Vue project that uses the Genesys Cloud API for basic supervisor functionality of monitoring agent statuses.
 
