@@ -11,6 +11,9 @@
         <QueueMemberDetails :queueMember="queueMember" />
       </div>
     </div>
+    <div class="no-users" v-show="showNoUsers">
+      No users assigned in this queue. 😞
+    </div>
   </div>
 </template>
 
@@ -29,6 +32,11 @@
 }
 
 .loading {
+  margin: 30px;
+  font-size: 1.5em;
+}
+
+.no-users {
   margin: 30px;
   font-size: 1.5em;
 }
@@ -53,12 +61,14 @@ export default defineComponent({
   data () {
     return {
       queueMembers: [] as platformClient.Models.QueueMember[],
-      isLoading: false
+      isLoading: false,
+      showNoUsers: false
     }
   },
   watch: {
     queue: async function (): Promise<void> {
       this.isLoading = true
+      this.showNoUsers = false
 
       if (!this.queue?.id) {
         console.error('Queue not found')
@@ -70,11 +80,11 @@ export default defineComponent({
       const userIds = this.queueMembers.map(member => member.id ?? '')
       if (userIds.length <= 0) {
         console.log('No users in queue')
-        return
+        this.showNoUsers = true
+      } else {
+        // Listen to user presence and routing status changes
+        await genesyscloudService.subscribeToUsersStatus(userIds, [this.onUserEvent])
       }
-
-      // Listen to user presence and routing status changes
-      await genesyscloudService.subscribeToUsersStatus(userIds, [this.onUserEvent])
 
       this.isLoading = false
     }
