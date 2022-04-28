@@ -21,3 +21,4 @@ https://genesyscloudblueprints.github.io/agent-monitoring-app?environment=mypure
 ```
 
 For more details, see the  [Develop a Vue App that provides basic agent monitoring functionality](https://developer.mypurecloud.com/blueprints/agent-monitoring-app "Goes to the blueprint article")
+
