@@ -1,4 +1,4 @@
-# Develop a Vue App that provides basic agent monitoring functionality
+# Develop a Vue App that provides basic agent monitoring functionality (DRAFT)
 
 View the full [Develop a Vue App that provides basic agent monitoring functionality](https://developer.mypurecloud.com/blueprints/agent-monitoring-app) article on the Genesys Cloud Developer Center.
 
