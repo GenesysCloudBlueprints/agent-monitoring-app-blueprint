@@ -1,7 +1,7 @@
 #!/bin/bash
 
 count_failed_case=$(jq '.failed|length' linter-result.json)
-count_success_case=$(jq '.success|length' linter-result.json)
+# count_success_case=$(jq '.success|length' linter-result.json)
 
 # Display failed cases first
 counter=0
@@ -79,7 +79,7 @@ done
 #     ((counter++))
 # done
 
-# if [ $count_failed_case -gt 0 ]
-# then
-#     exit 1
-# fi
+if [ $count_failed_case -gt 0 ]
+then
+    exit 1
+fi
