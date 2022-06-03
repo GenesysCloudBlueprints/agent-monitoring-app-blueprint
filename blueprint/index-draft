@@ -108,6 +108,14 @@ To run the sample Vue app from the blueprint repo:
     }
     ```
 
+4. Serve the webapp locally by running:
+
+    ```bash
+    npm run serve
+    ```
+
+    Note: This requires [Vue CLI](https://cli.vuejs.org/ "Vue CLI homepage") to be installed to your machine
+
 ## Implementation steps
 
 The following instructions will show how to create a new Vue project using Vue CLI and shows additional configuration to make it work with the Genesys Cloud Platform Client SDK.
