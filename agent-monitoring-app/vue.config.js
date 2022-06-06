@@ -3,5 +3,6 @@ module.exports = {
     resolve: {
       mainFields: ['jsnext:main', 'browser', 'module', 'main']
     }
-  }
+  },
+  publicPath: '/agent-monitoring-app-blueprint/'
 }
