@@ -69,7 +69,7 @@
 import platformClient from 'purecloud-platform-client-v2'
 import { defineComponent } from 'vue'
 
-const defaulProfilePicture = '/img/default-face.png'
+const defaulProfilePicture = './img/default-face.png'
 
 export default defineComponent({
   name: 'QueueMemberDetails',
