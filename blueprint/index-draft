@@ -126,7 +126,7 @@ The following instructions will show how to create a new Vue project using Vue C
 
     * **Authorized redirect URIs (one per line)**:
        * Your production URI
-       * `http://localhost:4200/` (to test locally)
+       * `http://localhost:8080/` (to test locally)
     * **Scope**:
        * analytics
        * authorization

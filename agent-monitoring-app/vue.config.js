@@ -4,5 +4,7 @@ module.exports = {
       mainFields: ['jsnext:main', 'browser', 'module', 'main']
     }
   },
-  publicPath: '/agent-monitoring-app-blueprint/'
+  publicPath: process.env.NODE_ENV === 'production'
+                ? '/agent-monitoring-app-blueprint/'
+                : '/'
 }

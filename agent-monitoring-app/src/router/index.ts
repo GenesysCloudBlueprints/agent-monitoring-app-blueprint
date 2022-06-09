@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/agent-monitoring-app-blueprint'),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
