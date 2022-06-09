@@ -69,30 +69,31 @@ You can run the sample Vue app locally or from the blueprint repo.
 
 To run the sample Vue app from the blueprint repo:
 
-1. Click [here](https://genesyscloudblueprints.github.io/agent-monitoring-app/ "Goes to the sample Vue app").
+1. Click [here](https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/ "Goes to the sample Vue app").
 
 2. If you're on a different region than `us-east-1` (mypurecloud.com), add an `environment` query parameter to the URL and enter your Genesys Cloud environment.
 
   For example:
 
   ```bash
-  https://genesyscloudblueprints.github.io/agent-monitoring-app/?environment=mypurecloud.com.au
+  https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint?environment=mypurecloud.com.au
   ```
 
   For more information, see [Platform API](/api/rest/ "Goes to the Platform API page in the Genesys Cloud Developer Center").
 
 ### Running the app locally
 
-1. Clone the [blueprint repo](https://github.com/GenesysCloudBlueprints/agent-monitoring-app "Goes to the blueprint repo in Github") to your local machine:
+1. Clone the [blueprint repo](https://github.com/GenesysCloudBlueprints/agent-monitoring-app-blueprint "Goes to the blueprint repo in Github") to your local machine:
 
     ```bash
-    git clone https://github.com/GenesysCloudBlueprints/agent-monitoring-app.git
+    git clone https://github.com/GenesysCloudBlueprints/agent-monitoring-app-blueprint.git
     ```
 
 2. Go to the **agent-monitoring-app** project directory.
 
     ```bash
-    cd genesys-cloud-sample
+    cd agent-monitoring-app-blueprint
+    cd agent-monitoring-app
     ```
 
 3. Modify the client ID and redirect URI values in the config files.
@@ -201,6 +202,6 @@ For more information, see [Create an OAuth client](https://help.mypurecloud.com/
 ## Additional resources
 
 * [Genesys Cloud Platform SDK - Javascript](/api/rest/client-libraries/javascript/ "Goes to the Platform API Javascript Client page")
-* [Sample Vue App](https://genesyscloudblueprints.github.io/agent-monitoring-app "Goes to the sample Vue app")
+* [Sample Vue App](https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/ "Goes to the sample Vue app")
 * [Vue CLI Homepage](https://cli.vuejs.org/ "Goes to the Vue CLI website")
 * [Vue.js Homepage](https://vuejs.org/ "Goes to the Vue website")

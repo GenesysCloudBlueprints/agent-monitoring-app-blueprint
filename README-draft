@@ -10,15 +10,14 @@ This Genesys Cloud Developer Blueprint demonstrates how to to include the Genesy
 
 This solution includes a sample Vue app that uses the Genesys Cloud Javascript Platform SDK to display the user and routing status of queue members.
 
-[Sample Vue app](https://genesyscloudblueprints.github.io/agent-monitoring-app "Goes to the sample Vue app")
+[Sample Vue app](https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/ "Goes to the sample Vue app")
 
 To authenticate in a Genesys Cloud region other than `mypurecloud.com`, add an `environment` query parameter.
 
 For example:
 
-```
-https://genesyscloudblueprints.github.io/agent-monitoring-app?environment=mypurecloud.ie
+```bash
+https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint?environment=mypurecloud.ie
 ```
 
 For more details, see the  [Develop a Vue App that provides basic agent monitoring functionality](https://developer.mypurecloud.com/blueprints/agent-monitoring-app "Goes to the blueprint article")
-
