@@ -1,15 +1,15 @@
 ---
-title: Develop a Vue App for basic agent monitoring using the Genesys Cloud Platform API Client SDK - JavaScript
+title: Develop a Vue app for basic agent monitoring that uses the Genesys Cloud Platform API Client SDK - JavaScript
 author: prince.merluza
 indextype: blueprint
 icon: blueprint
 image: images/cover.png
 category: 6
 summary: |
-  This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API JavaScript Client in a Vue project. The solution also includes a sample Vue project that provides a basic supervisor functionality of monitoring agent statuses.
+  This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API Client SDK - JavaScript in a Vue project. This solution includes a sample Vue project that allows supervisors to monitor the agents' statuses.
 ---
 
-This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API JavaScript Client in a Vue project. The solution also includes a sample Vue project that provides a basic supervisor functionality of monitoring agent statuses.
+This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API Client SDK - JavaScript in a Vue project. This solution includes a sample Vue project that allows supervisors to monitor the agents' statuses.
 
 ![Flowchart](./images/vue-app-genesys-cloud.png "Develop a Vue app that uses the Genesys Cloud Platform API Client SDK")
 
@@ -27,7 +27,7 @@ This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys C
 ### Specialized knowledge
 
 * Administrator-level knowledge of Genesys Cloud
-* Experience using the Genesys Cloud Platform API and the Genesys Cloud Platform API SDK - JavaScript
+* Experience using the Genesys Cloud Platform API and the Genesys Cloud Platform API Client SDK - JavaScript
 * Experience using Vue or Vue CLI 
 
 ### Genesys Cloud account requirements
@@ -37,9 +37,7 @@ This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys C
 
 ## Sample Vue app  
 
-The blueprint includes a sample Vue app that uses the Genesys Cloud Platform API JavaScript client to list the agents of a selected queue. The app shows the agent's status and routing status, and also updates the agent's status changes accordingly.
-
-If an agent status changes to "Not Responding" for an incoming interaction, then the browser triggers an alert and notifies the app user.
+The blueprint includes a sample Vue app that uses the Genesys Cloud Platform API Client SDK - JavaScript to list the agents of a selected queue. For each agent, the app shows the agent's current status and routing status. If an agent status changes to "Not Responding" for an incoming interaction, then the browser triggers an alert and notifies the user of the sample app.
 
 :::primary
 The Vue project is created using the Vue CLI (Vue version 2) for maximum compatibility. If you are using this as a reference for your existing Vue project, there can be differences in project structure and configuration.
@@ -74,13 +72,13 @@ To run the sample Vue app from the GitHub repo:
 
 ### Run the app locally
 
-1. Clone the GitHub repository [agent-monitoring-app](https://github.com/GenesysCloudBlueprints/agent-monitoring-app "Opens the GitHub repository") to your local machine.
+1. Clone the GitHub repository [agent-monitoring-app](https://github.com/GenesysCloudBlueprints/agent-monitoring-app "Opens the GitHub repository") to your local machine:
 
     ```bash
     git clone https://github.com/GenesysCloudBlueprints/agent-monitoring-app.git
     ```
 
-2. Navigate to the **agent-monitoring-app** project directory.
+2. Navigate to the **agent-monitoring-app** project directory:
 
     ```bash
     cd genesys-cloud-sample
@@ -103,11 +101,13 @@ To run the sample Vue app from the GitHub repo:
     npm run serve
     ```
 
-    Note: To serve the web app, you must have [Vue CLI](https://cli.vuejs.org/ "Vue CLI home page") installed on your local machine.
-
+  :::primary
+  **Note**: To serve the web app, you must have [Vue CLI](https://cli.vuejs.org/ "Vue CLI home page") installed on your local machine.
+  :::
+  
 ## Implementation steps
 
-The following instructions describe how to create a new Vue project using the Vue CLI and the additional configuration that is required to work with Genesys Cloud API Platform Client SDK.
+The following instructions describe how to create a new Vue project using the Vue CLI and the additional configuration that is required to work with the Genesys Cloud Platform API Client SDK - JavaScript.
 
 ### Create a Token Implicit Grant (Browser) OAuth client in Genesys Cloud
 
@@ -173,9 +173,9 @@ For more information, see [Create an OAuth client](https://help.mypurecloud.com/
     ```
     This configuration allows the `purecloud-platform-client-v2` library to be successfully imported through webpack.
 
-### Import the Genesys Cloud API Platform JavaScript SDK into your Vue project
+### Import the Genesys Cloud Platform API Client SDK - JavaScript into your Vue project
 
-1. Import and use the Genesys Cloud Platform API JavaScript client in your Vue project. For example:
+1. Import and use the Genesys Cloud Platform API Client SDK - JavaScript into your Vue project. For example:
 
     ```typescript
     import platformClient from 'purecloud-platform-client-v2'
@@ -184,7 +184,7 @@ For more information, see [Create an OAuth client](https://help.mypurecloud.com/
 2. Use the different API tools that are available in the `platformClient` object:
    
     ```typescript
-    // Login to Genesys Cloud
+    // Log in to Genesys Cloud
     async loginImplicitGrant (): Promise<void> {
         const client = platformClient.ApiClient.instance
         await client.loginImplicitGrant(config.clientId, config.redirectUri)
