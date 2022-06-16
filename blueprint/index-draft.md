@@ -11,7 +11,7 @@ summary: |
 
 This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API Client SDK - JavaScript in a Vue project. This solution includes a sample Vue project that allows supervisors to monitor the agents' statuses.
 
-![Flowchart](./images/vue-app-genesys-cloud.png "Develop a Vue app that uses the Genesys Cloud Platform API Client SDK")
+![Flowchart for the Vue App for basic agent monitoring blueprint](./images/vue-app-genesys-cloud.png "Develop a Vue App for basic agent monitoring")
 
 ## Solution components
 
