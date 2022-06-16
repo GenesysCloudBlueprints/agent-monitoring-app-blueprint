@@ -1,5 +1,5 @@
 ---
-title: Develop a Vue app for basic agent monitoring that uses the Genesys Cloud Platform API Client SDK - JavaScript
+title: Develop a Vue App for basic agent monitoring
 author: prince.merluza
 indextype: blueprint
 icon: blueprint
