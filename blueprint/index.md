@@ -59,13 +59,13 @@ You can run the sample Vue app locally or from the GitHub repo.
 
 To run the sample Vue app from the GitHub repo:
 
-1. Use the link [https://genesyscloudblueprints.github.io/agent-monitoring-app/](https://genesyscloudblueprints.github.io/agent-monitoring-app/ "Opens the sample Vue app") to open the app. 
+1. Use the link [https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/](https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/ "Opens the sample Vue app") to open the app.
 2. If you're in a different region other than us-east-1 (mypurecloud.com), add an `environment` query parameter to the URL and enter your Genesys Cloud environment.
 
     For example:
 
     ```bash
-    https://genesyscloudblueprints.github.io/agent-monitoring-app/?environment=mypurecloud.com.au
+    https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/?environment=mypurecloud.com.au
     ```
 
   For more information, see [Platform API](/api/rest/ "Opens the Platform API page").
@@ -194,6 +194,6 @@ For more information, see [Create an OAuth client](https://help.mypurecloud.com/
 ## Additional resources
 
 * [Genesys Cloud Platform API Client SDK - JavaScript](/api/rest/client-libraries/javascript/ "Opens the Platform API JavaScript Client page") in the Genesys Cloud Developer Center
-* [Sample Vue App](https://genesyscloudblueprints.github.io/agent-monitoring-app "Opens the sample Vue app") in GitHub 
+* [Sample Vue App](https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/ "Opens the sample Vue app") in GitHub
 * [Vue CLI home page](https://cli.vuejs.org/ "Opens the Vue CLI website") in the Vue CLI website
 * [Vue.js home page](https://vuejs.org/ "Opens the Vue website") in the Vue website
