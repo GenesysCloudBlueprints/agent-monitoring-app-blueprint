@@ -21,3 +21,4 @@ https://genesyscloudblueprints.github.io/agent-monitoring-app-blueprint/?environ
 ```
 You can view the complete blueprint and download the sample app files from [here](https://github.com/GenesysCloudBlueprints/agent-monitoring-app-blueprint/tree/main/agent-monitoring-app "Opens the sample Vue app").
 
+
