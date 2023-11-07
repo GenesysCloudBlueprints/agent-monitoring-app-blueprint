@@ -72,10 +72,10 @@ To run the sample Vue app from the GitHub repo:
 
 ### Run the app locally
 
-1. Clone the GitHub repository [agent-monitoring-app](https://github.com/GenesysCloudBlueprints/agent-monitoring-app "Opens the GitHub repository") to your local machine:
+1. Clone the GitHub repository [agent-monitoring-app](https://github.com/GenesysCloudBlueprints/agent-monitoring-app-blueprint "Opens the GitHub repository") to your local machine:
 
     ```bash
-    git clone https://github.com/GenesysCloudBlueprints/agent-monitoring-app.git
+    git clone https://github.com/GenesysCloudBlueprints/agent-monitoring-app-blueprint.git
     ```
 
 2. Navigate to the **agent-monitoring-app** project directory:
