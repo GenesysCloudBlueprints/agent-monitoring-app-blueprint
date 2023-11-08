@@ -1,6 +1,6 @@
 # Develop a Vue App for basic agent monitoring
 
-View the [Develop a Vue App for basic agent monitoring blueprint](https://developer.mypurecloud.com/blueprints/agent-monitoring-app "Opens the Genesys Cloud Developer Center blueprints page").
+View the [Develop a Vue App for basic agent monitoring blueprint](https://developer.mypurecloud.com/blueprints/agent-monitoring-app-blueprint "Opens the Genesys Cloud Developer Center blueprints page").
 
 ![GCSDK_Angular](blueprint/images/vue-app-genesys-cloud.png "Develop a Vue App for basic agent monitoring")
 
