@@ -1,6 +1,8 @@
 <template>
   <AppHeader/>
-  <router-view/>
+  <div v-if="authError" class="auth-error">{{ authError }}</div>
+  <router-view v-else-if="authenticated"/>
+  <div v-else class="auth-loading">Authenticating...</div>
 </template>
 
 <style>
@@ -36,18 +38,28 @@ select {
 </style>
 
 <script lang="ts">
-import genesysCloud from '@/services/genesyscloud-service'
 import AppHeader from '@/components/AppHeader.vue'
-import config from '@/config/config'
+import genesysCloud from '@/services/genesyscloud-service'
 
 export default {
   name: 'Agent Monitoring App',
   components: {
     AppHeader
   },
+  data () {
+    return {
+      authenticated: false,
+      authError: null as string | null,
+    }
+  },
   async created (): Promise<void> {
-    await genesysCloud.loginImplicitGrant()
-    history.pushState({}, '', config.redirectUri)
+    try {
+      await genesysCloud.loginWithPKCE()
+      this.authenticated = true
+    } catch (error) {
+      console.error('Authentication failed', error)
+      this.authError = 'Failed to authenticate. Please try again.'
+    }
   }
 }
 </script>

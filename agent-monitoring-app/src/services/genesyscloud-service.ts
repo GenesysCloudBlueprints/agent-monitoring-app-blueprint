@@ -1,25 +1,24 @@
 import platformClient from 'purecloud-platform-client-v2'
-import config from '@/config/config'
 
+const client = platformClient.ApiClient.instance
 const routingApi = new platformClient.RoutingApi()
 const notificationsApi = new platformClient.NotificationsApi()
 
-let userStatusWebsocket : WebSocket
+let userStatusWebsocket: WebSocket
 
 export default {
-  // Login to Genesys Cloud
-  async loginImplicitGrant (): Promise<void> {
-    const urlParams = new URLSearchParams(window.location.search)
-    const environment = urlParams.get('environment') || localStorage.getItem('gc-environment') || 'mypurecloud.com'
-    const client = platformClient.ApiClient.instance
+  async loginWithPKCE (): Promise<platformClient.AuthData> {
+    const environment = new URLSearchParams(window.location.search).get('environment')
+      || import.meta.env.VITE_GENESYSCLOUD_ENVIRONMENT
+      || 'mypurecloud.com'
 
     client.setPersistSettings(true, 'agent-monitoring-app')
     client.setEnvironment(environment)
-    localStorage.setItem('gc-environment', environment)
 
-    await client.loginImplicitGrant(config.clientId, config.redirectUri)
-
-    console.log('Authenticated')
+    return await client.loginPKCEGrant(
+      import.meta.env.VITE_GENESYSCLOUD_CLIENT_ID,
+      import.meta.env.VITE_GENESYSCLOUD_REDIRECT_URI
+    )
   },
 
   // Get the organization's queues.
@@ -38,18 +37,12 @@ export default {
   // NOTE: For this sample only get the first 100.
   async getMembersOfQueue (queueId: string): Promise<undefined | platformClient.Models.QueueMember[]> {
     const data = await routingApi.getRoutingQueueMembers(queueId, { pageSize: 100, expand: ['presence', 'routingStatus'] })
-    console.log(data)
     return data.entities
   },
 
   async subscribeToUsersStatus (userIds: string[], callbacks: ((message: MessageEvent) => void)[]): Promise<void> {
-    let channelId = ''
-
     const channel = await notificationsApi.postNotificationsChannels()
-
     if (!channel.connectUri || !channel.id) throw new Error('Channel not created')
-    console.log('Channel created')
-    channelId = channel.id
 
     // Assign callbacks to websocket
     if (userStatusWebsocket) userStatusWebsocket.close()
@@ -60,15 +53,10 @@ export default {
       }
     }
 
-    // Subscribe to topics
-    const topics:platformClient.Models.ChannelTopic[] = []
-    userIds.forEach(userId => {
-      topics.push({
-        id: `v2.users.${userId}?presence&routingStatus`
-      })
-    })
+    const topics: platformClient.Models.ChannelTopic[] = userIds.map(userId => ({
+      id: `v2.users.${userId}?presence&routingStatus`
+    }))
 
-    await notificationsApi.postNotificationsChannelSubscriptions(channelId, topics)
-    console.log('Subscribed to topics')
+    await notificationsApi.postNotificationsChannelSubscriptions(channel.id, topics)
   }
 }

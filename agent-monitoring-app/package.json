@@ -2,34 +2,29 @@
   "name": "agent-monitoring-app-blueprint",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "purecloud-platform-client-v2": "^125.0.0",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "latest": "^0.2.0",
+    "purecloud-platform-client-v2": "^248.0.0",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0",
-    "typescript": "~4.1.5"
+    "@types/node": "^25.5.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/compiler-sfc": "^3.5.30",
+    "eslint": "^10.0.3",
+    "eslint-plugin-vue": "^10.8.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^8.0.0",
+    "vue-tsc": "^3.2.5"
   }
 }

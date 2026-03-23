@@ -75,18 +75,19 @@ export default defineComponent({
         return
       }
 
-      // When a queue is selected, display the queue members (max of 100)
-      this.queueMembers = await genesyscloudService.getMembersOfQueue(this.queue.id) ?? []
-      const userIds = this.queueMembers.map(member => member.id ?? '')
-      if (userIds.length <= 0) {
-        console.log('No users in queue')
-        this.showNoUsers = true
-      } else {
-        // Listen to user presence and routing status changes
-        await genesyscloudService.subscribeToUsersStatus(userIds, [this.onUserEvent])
+      try {
+        this.queueMembers = await genesyscloudService.getMembersOfQueue(this.queue.id) ?? []
+        const userIds = this.queueMembers.map(member => member.id ?? '')
+        if (userIds.length <= 0) {
+          this.showNoUsers = true
+        } else {
+          await genesyscloudService.subscribeToUsersStatus(userIds, [this.onUserEvent])
+        }
+      } catch (error) {
+        console.error('Failed to load queue details:', error)
+      } finally {
+        this.isLoading = false
       }
-
-      this.isLoading = false
     }
   },
   methods: {
