@@ -10,6 +10,10 @@ export default defineConfig(({ mode }) => ({
     },
     mainFields: ['jsnext:main', 'browser', 'module', 'main']
   },
+  build: {
+    outDir: '../docs',
+    emptyOutDir: true
+  },
   base: mode === 'production'
     ? '/agent-monitoring-app-blueprint/'
     : '/'

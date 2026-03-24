@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n,t as r}from"./index-mG4_cXyT.js";var i={},a={class:`about`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`h1`,null,`This is an about page`,-1)]])}var s=r(i,[[`render`,o]]);export{s as default};
